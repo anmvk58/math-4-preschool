@@ -9,7 +9,7 @@ const operations: {id:Operation;symbol:string;label:string}[] = [
 ]
 export function SetupPage({onStart,onStartMatching,loading,error,sound,onSound}:{onStart:(count:number,max:number,ops:Operation[])=>void;onStartMatching:(rounds:number,max:number)=>void;loading:boolean;error:string;sound:boolean;onSound:(v:boolean)=>void}) {
   const [count,setCount] = useState(10), [max,setMax] = useState(10)
-  const [selected,setSelected] = useState<Operation[]>(['ADD','SUBTRACT'])
+  const [selected,setSelected] = useState<Operation[]>(['ADD'])
   const [activity,setActivity] = useState<'MATH'|'MATCHING'>('MATH')
   const [gameRounds,setGameRounds] = useState(5), [gameMax,setGameMax] = useState(10)
   const toggle = (op:Operation) => setSelected(v=>v.includes(op)?v.filter(x=>x!==op):[...v,op])
